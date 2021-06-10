@@ -27,6 +27,3 @@ jobs:
 
       - name: Cypress.io
         uses: cypress-io/github-action@v2.9.7
-        with:
-          install: yarn
-          command: yarn cypress:run
