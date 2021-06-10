@@ -21,6 +21,6 @@
     "hook:pre-commit": "techtrain-railway hook:pre-commit",
     "hook:update": "simple-git-hooks",
     "station2:prettier": "prettier -c ./src/station2.html",
-    "fmt": "prettier ."
+    "fmt": "prettier -w --write ."
   }
 }
