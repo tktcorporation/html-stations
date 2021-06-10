@@ -1,72 +1,112 @@
 # TechTrain HTML/CSS/JavaScript Railway について
-Railwayでは、Gitで自分が取り組んだ内容を記録する際に、自動でテストが実行され、Stationの内容に即した実装になっているかを最低限のラインとして確認します。
-チェックが通れば、Stationクリアになるようになっています。
-クリア後、TechTrainの画面に戻り、クリアになっているかを確認してみてください。
+
+Railway では Git で自分が取り組んだ内容を記録するときに、自動でテストが実行されます。この際、Station の内容に即した実装になっているかを最低限のラインとして確認します。
+テストが通れば Station クリアとなります。
+クリア後、TechTrain の画面に戻り、クリアになっているかを確認してみてください。
+
 ## 初期設定
+
 ### 必要なツール
-1. Node.js
+
+1. Node.js( 14.* ) [ 12.* ,  16.* では動作しません]
 2. Yarn
-上記つをインストールする必要があります。
-### Macにおける初期設定
-HomeBrewを使ってインストールすることを想定しています。
-#### 1. HomeBrew のインストール
+
+上記 2 つをインストールする必要があります。
+
+### インストール済みの場合
+
+```shell
+yarn install
+```
+
+のコマンドを実行し、すぐに問題に取り組み始めることができます。
+
+Station の問題は、TechTrain の画面で確認してください。
+
+### Mac における初期設定
+
+Homebrew を使ってインストールすることを想定しています。
+
+#### 1. Homebrew のインストール
+
 Terminal.app を開き、次のコマンドをコピーアンドペーストで実行してください。
 
-`/usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)`
+```shell
+/usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)
+```
 
 すでにインストール済みの方は、この手順を飛ばしてください。
-インストールされたかどうかを確認するには、Terminal.appを開いて
+インストールされたかどうかを確認するには、Terminal.app を開いて
 
-`brew -v`
+```shell
+brew -v
+```
 
 を実行してください。インストール済みであれば次のような表示になるはずです。
 
 ![スクリーンショット 2021-04-25 15 42 19](https://user-images.githubusercontent.com/16362021/115983568-eba85d80-a5dc-11eb-9e1a-49462edc2d46.png)
 
 何か起こった際には次の公式サイトを確認してください。
+
 https://brew.sh/index_ja
+
 #### 2. Node.js のインストール
+
 Homebrew を使って、 Node.js をインストールします。
 Terminal.app を開き、次のコマンドをコピーアンドペーストで実行してください。
-`brew install node`
-インストールされたかどうかを確認するには、Terminal.appを開いて
 
-`node -v`
+```shell
+brew install node
+```
+
+インストールされたかどうかを確認するには、Terminal.app を開いて
+
+```shell
+node -v
+```
 
 を実行してください。インストール済みであれば次のような表示になるはずです。
 
 ![スクリーンショット 2021-04-25 16 18 23](https://user-images.githubusercontent.com/16362021/115984382-deda3880-a5e1-11eb-9da3-97c71ad5863b.png)
 
-vから先は、インストールしたバージョンが表示されるため、上記画像の表示と全く同じものではなくとも大丈夫です。
-本当は、 Node.jsのバージョン管理ツールである `n` や `nodebrew` などのツールを入れた方が実践的ですが、パスの修正などができないとトラブルが起きた時に何もわからなくなるので、わからないうちはお勧めしません。
+v から先は、インストールしたバージョンが表示されるため、上記画像の表示と全く同じバージョンでなくても大丈夫です。
+本当は Node.js のバージョン管理ツールである `n` や `nodebrew` などのツールを入れた方が実践的ですが、パスの修正などができないとトラブルが起きた時に何もわからなくなるので、わからないうちはお勧めしません。
 一旦素直に Homebrew で直接 Node.js の最新版をインストールしておきましょう。
 
 #### 3. Yarn のインストール
 
 Terminal.app を開き、次のコマンドをコピーアンドペーストで実行してください。
-`brew install yarn`
-インストールされたかどうかを確認するには、Terminal.appを開いて
-`yarn -v`
+
+```shell
+brew install yarn
+```
+
+インストールされたかどうかを確認するには、Terminal.app を開いて
+
+```shell
+yarn -v
+```
+
 を実行してください。インストール済みであれば次のような表示になるはずです。
 
 ![スクリーンショット 2021-04-25 15 44 21](https://user-images.githubusercontent.com/16362021/115983603-28745480-a5dd-11eb-9636-bdf4d77ab796.png)
 
-### Windowsにおける初期設定
+### Windows における初期設定
 
-Windowsでの初期設定を行うためには、キャラクターユーザーインターフェイス（CUI）の操作を行う必要があります。
+Windows での初期設定を行うためには、キャラクターユーザーインターフェイス（CUI）の操作を行う必要があります。
 
-#### PowerShellの起動方法
+#### PowerShell の起動方法
 
-Windowsでは、**PowerShell**とよばれるシェルが標準で搭載されています。シェルはキャラクターユーザーインターフェイスの1つで、ファイルやディレクトリの操作などに特化したものです。
+Windows では、**PowerShell**とよばれるシェルが標準で搭載されています。シェルはキャラクターユーザーインターフェイスの 1 つで、ファイルやディレクトリの操作などに特化したものです。
 
-PowerShellを起動するには、スタートボタン（左下にあるWindowsのロゴ）を右クリックするか、`Win-X`キーを押して以下のメニューを表示してください。
+PowerShell を起動するには、スタートボタン（左下にある Windows のロゴ）を右クリックするか、`Win-X`キーを押して以下のメニューを表示してください。
 管理者権限を必要とする場合は「Windows PowerShell (管理者)(A)」、それ以外の場合は「Windows PowerShell(I)」をクリックしましょう。
 
 ![image](https://user-images.githubusercontent.com/298748/115985113-42199a00-a5e5-11eb-9f7c-85c19f73666b.png)
 
-#### PowerShellを操作する
+#### PowerShell を操作する
 
-PowerShellを起動すると、以下のような画面が出てきます。
+PowerShell を起動すると、以下のような画面が出てきます。
 
 ![image](https://user-images.githubusercontent.com/298748/115985231-d2f07580-a5e5-11eb-9dd8-5e9751df590b.png)
 
@@ -120,13 +160,13 @@ cd ~
 
 でホームディレクトリに戻ることを確認しましょう。
 
-#### Scoopを用いた環境構築（推奨）
+#### Scoop を用いた環境構築（推奨）
 
 **パッケージ管理ツール**と呼ばれる、ソフトウェアのインストールを簡単にするためのツールをインストールします。
-[Chocolatey](https://chocolatey.org/)など他のパッケージ管理ツールもありますが、
-[Scoop](https://scoop.sh/)を用いた環境構築を推奨します。
+[Chocolatey](https://chocolatey.org/) など他のパッケージ管理ツールもありますが、
+[Scoop](https://scoop.sh/) を用いた環境構築を推奨します。
 
-Scoopをインストールするには、PowerShellを**管理者権限**で起動し、以下のコマンドを入力します：
+Scoop をインストールするには、PowerShell を**管理者権限**で起動し、以下のコマンドを入力します：
 
 ```powershell
 iwr -useb get.scoop.sh | iex
@@ -140,9 +180,9 @@ Set-ExecutionPolicy RemoteSigned -scope CurrentUser
 
 これらの操作を行うためには、ユーザーアカウントに[管理者権限](https://support.microsoft.com/ja-jp/windows/63267a09-9926-991a-1c77-d203160c8563)があることが前提となります。
 
-#### Git、nodeおよびyarnのインストール
+#### Git、node および yarn のインストール
 
-Railwayを進めるには、**Git**、**node**、**yarn**のインストールが必要です。管理者権限で起動したPowerShellに以下のコマンドを入力して、Scoopを経由してインストールしましょう：
+Railway を進めるには、**Git**、**node**、**yarn**のインストールが必要です。管理者権限で起動した PowerShell に以下のコマンドを入力して、Scoop を経由してインストールしましょう：
 
 ```powershell
 scoop install git nodejs-lts yarn
@@ -150,7 +190,7 @@ scoop install git nodejs-lts yarn
 
 #### `html-stations`リポジトリのクローン
 
-"Use this template"から作成したリポジトリを、作業するディレクトリにクローンしましょう。
+"Use this template" から作成したリポジトリを作業するディレクトリにクローンしましょう。
 
 ```powershell
 git clone https://github.com/{ユーザー名}/html-stations.git
@@ -159,7 +199,7 @@ git clone https://github.com/{ユーザー名}/html-stations.git
 #### パッケージのインストール
 
 クローンしたばかりのリポジトリは歯抜けの状態なので、必要なファイルをダウンロードする必要があります。
-10分程度掛かることもあるため、気長に待ちましょう。上から順番に**１つずつ**コマンドを実行しましょう：
+10 分程度掛かることもあるため、気長に待ちましょう。上から順番に**１つずつ**コマンドを実行しましょう：
 
 ```powershell
 cd html-stations
@@ -173,12 +213,71 @@ yarn install
 yarn hook:update
 ```
 
-#### TechTrainへのログイン
+#### TechTrain へのログイン
 
-では、最後にTechTrainにログインしましょう。画面の指示に従い入力を進めてください。
+では、最後に TechTrain にログインしましょう。画面の指示に従い入力を進めてください。
 
 ```powershell
 yarn login:techtrain
 ```
 
 お疲れ様でした。
+
+## 自分のリポジトリの状態を最新の TechBowl-japan/html-stations と合わせる
+
+Forkしたリポジトリは、Fork元のリポジトリの状態を自動的に反映してくれませんので、自分で更新をする必要があります。
+何かエラーが出た際には、こちらを試してみてください。
+
+### 準備
+
+```shell
+# 自分が何か変更した内容があれば、 stash した後に実行してください。
+git remote add upstream git@github.com:TechBowl-japan/html-stations.git
+git fetch upstream
+```
+
+これらのコマンドを実行後にうまくいっていれば、次のような表示が含まれています。
+
+```
+git branch -a ←このコマンドを実行
+
+* master
+  remotes/origin/HEAD -> origin/main
+  remotes/origin/main
+  remotes/upstream/main ←こちらのような upstream という文字が含まれた表示の行があれば成功です。
+```
+
+こちらで自分のリポジトリを TechBowl-japan/html-stations の最新の状態と合わせるための準備は終了です。
+
+### 自分のリポジトリの状態を最新に更新
+
+```
+# 自分の変更の状態を stash した上で次のコマンドを実行してください。
+
+# ↓main ブランチに移動するコマンド
+git checkout main
+
+# ↓ TechBowl-japan/html-stations の最新の状態をオンラインから取得
+git fetch upstream
+
+# ↓ 最新の状態を自分のリポジトリに入れてローカルの状態も最新へ
+git merge upstream/main
+git push
+yarn install
+```
+
+### GitHubアカウントでサインアップしたので、パスワードがないという方へ
+
+https://techbowl.co.jp/techtrain/resetpassword
+
+上記のURLより自分の登録したメールアドレスより、パスワードリセットを行うことで、パスワードを発行してください。
+
+メールアドレスがわからない場合は、ログイン後にユーザー情報の編集画面で確認してください。
+ログインしていれば、次のURLから確認できます。
+
+https://techbowl.co.jp/techtrain/mypage/profile
+
+### 2021/06/01 20:00以前に挑戦して、Station15で詰まっている方へ
+
+1. 問題文を修正しました
+2. テストケースの不具合に対しても対応したため、このテキストの上部にある「自分のリポジトリの状態を最新に更新」を試してみてください。

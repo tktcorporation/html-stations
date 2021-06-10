@@ -1,6 +1,6 @@
 {
-  "name": "Station 09",
-  "id": 9,
+  "name": "Station 15",
+  "id": 15,
   "prepare": [
     {
       "command": "yarn lite-server",
@@ -10,7 +10,7 @@
   "tests": [
     {
       "type": "cypress",
-      "specFile": "./cypress/integration/station9.spec.ts"
+      "specFile": "./cypress/integration/station15.spec.ts"
     }
   ]
 }
