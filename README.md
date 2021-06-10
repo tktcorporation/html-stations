@@ -6,6 +6,10 @@ Railway では Git で自分が取り組んだ内容を記録するときに、�
 
 ## 初期設定
 
+### CI の設定
+
+See https://github.com/3c1u/react-stations-wth-ci#react-stations-with-ci
+
 ### 必要なツール
 
 1. Node.js( 14.* ) [ 12.* ,  16.* では動作しません]
